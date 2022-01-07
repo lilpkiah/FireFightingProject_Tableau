@@ -1,0 +1,145 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Basic Table {% endblock %} 
+
+<!-- Specific CSS Plugins goes HERE  -->
+{% block css_plugins %}{% endblock css_plugins %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %} 
+
+{% load static %}
+<div style="background-color:#F4F5F7; padding-left:55px">
+	<div class="btn-group">
+                <button type="button" class="btn btn-primary">화재장소유형</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                  <a class="dropdown-item" href="/fire_type?place=판매시설">판매시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=공장시설">공장시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=의료시설">의료시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=생활편익시설">생활편익시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=제1종근린생활시설">제1종근린생활시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=제2종근린생활시설">제2종근린생활시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=운수시설">운수시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=업무시설">업무시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=숙박시설">숙박시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=위락시설">위락시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=문화및집회시설">문화및집회시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=종교시설">종교시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=교육연구시설">교육연구시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=노유자시설">노유자시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=수련시설">수련시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=운동시설">운동시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=묘지관련시설">묘지관련시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=관광휴게시설">관광휴게시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=장례시설">장례시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=종교시설">종교시설</a>
+                  <a class="dropdown-item" href="/fire_type?place=기타">기타</a>
+                  <a class="dropdown-item" href="/fire_type?place=위험물저장및처리시설">위험물저장및처리시설</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/fire_type?place=단독주택">단독주택</a>
+                  <a class="dropdown-item" href="/fire_type?place=공동주택">공동주택</a>
+                </div>
+     </div>
+</div>
+
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">장소유형분포</h4>
+            <p class="card-description">
+              Add class <code>.table</code>
+            </p>
+            <div class="form-group row">
+         
+            <iframe src="{% get_static_prefix %}maps/{{place}}_district.html" width=500, height=550></iframe>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">건수 비율</h4>
+            <p class="card-description">
+              Add class <code>.table-hover</code>
+            </p>
+            <div class="form-group row">
+              <img src="{% static 'images/fig21.png' %}" width=350, height=400>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">피해액 비율</h4>
+            <p class="card-description">
+              Add class <code>.table-hover</code>
+            </p>
+            <div class="form-group row">
+              <img src="{% static 'images/fig22.png' %}" width=350, height=400 style='vertical-align:middle;'>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">지역별 건수/금액</h4>
+            <p class="card-description">
+              Add class <code>.table-striped</code>
+            </p>
+            <div class="table-responsive">
+             <div class="form-group row">
+              <img src="{% static 'images/fig23.png' %}" width=500, height=600>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">지역별 건수 장소분포</h4>
+            <p class="card-description">
+              Add class <code>.table-bordered</code>
+            </p>
+            <div class="form-group row">
+              <iframe src="{% get_static_prefix %}maps/{{place}}_district_cnt.html" width=500, height=550></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">지역별 금액 장소분포</h4>
+            <p class="card-description">
+              Add class <code>.table-bordered</code>
+            </p>
+            <div class="form-group row">
+              <iframe src="{% get_static_prefix %}maps/{{place}}_district_damage.html" width=500, height=550></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock content %}
+
+<!-- Specific JS Plugins goes HERE  -->
+{% block js_plugins %}
+
+  <script src="/static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+{% endblock js_plugins %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

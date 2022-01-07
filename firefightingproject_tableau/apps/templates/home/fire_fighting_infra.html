@@ -1,0 +1,94 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Basic Elements {% endblock %} 
+
+<!-- Specific CSS Plugins goes HERE  -->
+{% block css_plugins %}
+
+  <link rel="stylesheet" href="/static/assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="/static/assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+
+{% endblock css_plugins %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+       
+{% load static %}
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">소방서당 인원수 및 발생건수</h4>
+            <p class="card-description">
+              Basic form layout
+            </p>
+            <div class="form-group row">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">소방서당 일반현황</h4>
+            <p class="card-description">
+              Horizontal form layout
+            </p>
+            <div class="form-group row">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">월별 발생 건수</h4>
+            <p class="card-description">
+              Basic form layout
+            </p>
+            <div class="form-group row">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">지역별 발생 건수</h4>
+            <p class="card-description">
+              Horizontal form layout
+            </p>
+            <div class="form-group row">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS Plugins goes HERE  -->
+{% block js_plugins %}
+
+  <script src="/static/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="/static/assets/vendors/select2/select2.min.js"></script>
+  <script src="/static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+{% endblock js_plugins %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script src="/static/assets/js/file-upload.js"></script>
+  <script src="/static/assets/js/typeahead.js"></script>
+  <script src="/static/assets/js/select2.js"></script>
+
+{% endblock javascripts %}

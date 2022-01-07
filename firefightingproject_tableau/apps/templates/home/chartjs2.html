@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Charts {% endblock %} 
+
+<!-- Specific CSS Plugins goes HERE  -->
+{% block css_plugins %}{% endblock css_plugins %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% load static %}
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">평균 습도 - 월별 화재건수</h4>
+            <!-- <canvas id="lineChart"></canvas>  -->
+            <div class="form-group row">
+              <img src="{% static 'images/fig09.png' %}" width=500, height=550>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">평균 습도 - 지역별 화재건수</h4>
+            <div class="form-group row">
+              <img src="{% static 'images/fig10.png' %}" width=500, height=550>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">평균 습도 - 월별 피해규모</h4>
+            <div class="form-group row">
+              <img src="{% static 'images/fig11.png' %}" width=500, height=550>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">평균 습도 - 지역별 피해규모</h4>
+            <div class="form-group row">
+              <img src="{% static 'images/fig12.png' %}" width=500, height=550>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+{% endblock content %}
+
+<!-- Specific JS Plugins goes HERE  -->
+{% block js_plugins %}
+
+  <script src="/static/assets/vendors/chart.js/Chart.min.js"></script>
+  <script src="/static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+{% endblock js_plugins %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script src="/static/assets/js/chart.js"></script>
+
+{% endblock javascripts %}
